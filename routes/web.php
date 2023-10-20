@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', ['name' => 'Regan', 'role' => 'Admin', 'products' => ['Apel', 'Mie', 'Nasi', 'Ayam']]);
 });
 
 Route::get('/about', function () {
-    return 'whatever';
+    return view('about');
 });
 
 Route::get('/contact', function () {
