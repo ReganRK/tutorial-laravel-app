@@ -13,5 +13,13 @@
     <h2>
         {{$phone}}
     </h2>
+    <h3>
+        @if ($id)
+            {{$id}}
+        @else
+            ini bukan id
+        @endif
+        
+    </h3>
 </body>
 </html>
