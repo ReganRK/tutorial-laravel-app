@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::view('/coba', 'coba');
 
 Route::get('/', function () {
     return view('home', ['name' => 'Regan', 'role' => 'Admin', 'products' => ['Apel', 'Mie', 'Nasi', 'Ayam']]);
-});
+})->middleware('auth');
 
 Route::get('/about', function () {
     return view('about');
@@ -67,3 +68,7 @@ Route::prefix('admin')->group(function () {
 //* php artisan route:list
 //* check all routes here
 
+//* cek middleware itu di kernel
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+
+Route::post('/login', [AuthController::class, 'authenticate']);
