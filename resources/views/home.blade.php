@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container-fluid"> -->
-    @extends('layouts.mainlayout')
+    @extends('layouts.postlayout')
     @section('title', 'Home')
 
     @section('content')
